@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    environment:
+      EULA: "true"
+      TYPE: PAPER
+      VERSION: 1.16.1
+      CONSOLE: "false"
+      ENABLE_RCON: "false"
+      INIT_MEMORY: 512M
+      MAX_MEMORY: 1256M
+    ports:
+      - 25565:25565
+    volumes:
+      - /mnt/papermc:/data
+    container_name: mc
